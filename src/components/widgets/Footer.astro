@@ -1,0 +1,62 @@
+---
+import { getHomePermalink } from '~/utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+export interface Props {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
+  socialLinks: Array<Link>;
+  footNote?: string;
+  theme?: string;
+}
+
+const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+---
+
+<footer class="bg-[#131353]/70 backdrop-blur-md text-white py-6">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Logo y descripción -->
+    <div class="flex flex-col justify-center h-full">
+      <a href={getHomePermalink()} class="mb-3">
+        <img src="/images/logo.png" alt="USA Cargo Corp." class="h-8" />
+      </a>
+    </div>
+    
+    <!-- Información de contacto -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+      <ul class="text-sm space-y-2">
+        <li><strong>Email:</strong> Lilian@usacargocorp.com </li>
+        <li><strong>Teléfono:</strong> (786) 264-6730</li>
+        <li><strong>Dirección:</strong> 7950 N.W. 77th STREET, Unit #1, Dock Door 31-34, Miami FL 33166</li>
+      </ul>
+    </div>
+
+    <!-- Enlaces -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+      <ul class="text-sm space-y-2">
+        <li><a href="/about" class="hover:underline">Sobre nosotros</a></li>
+        <li><a href="/services" class="hover:underline">Servicios</a></li>
+        <li><a href="/contact" class="hover:underline">Contacto</a></li>
+        <li><a href="/terms" class="hover:underline">Términos y condiciones</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="mt-6 text-center text-xs text-white/60">
+    © {new Date().getFullYear()} USA Cargo Corp. Todos los derechos reservados.
+  </div>
+</footer>

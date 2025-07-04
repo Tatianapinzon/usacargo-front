@@ -1,0 +1,73 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contacto ',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText adaptado -->
+  <HeroText
+    title="Cotiza tu envío ahora y recibe la mejor solución para tu carga."
+  />
+
+  <!-- Formulario personalizado -->
+  <section class="py-16 px-6 bg-[#F8F8F4]">
+    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
+      <h2 class="text-2xl font-bold text-[#131353] mb-6 text-center">Escríbenos</h2>
+      <form action="https://formspree.io/f/mpwdvpwg" method="POST" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-[#131353]">Nombre</label>
+          <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-[#E85002] focus:border-[#E85002]" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-[#131353]">Email</label>
+          <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-[#E85002] focus:border-[#E85002]" />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-[#131353]">Teléfono</label>
+          <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-[#E85002] focus:border-[#E85002]" />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-[#131353]">Mensaje</label>
+          <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md p-3 text-sm focus:ring-[#E85002] focus:border-[#E85002]"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="bg-[#E85002] hover:bg-[#A93700] text-white font-semibold px-8 py-3 rounded-full shadow-md transition">
+            Enviar mensaje
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Información de contacto real -->
+  <Features2
+    title="¿Dónde encontrarnos?"
+    items={[
+      {
+        title: 'Email',
+        description: 'Lilian@usacargocorp.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Teléfono',
+        description: '(786) 264-6730',
+        icon: 'tabler:phone-call',
+      },
+      {
+        title: 'Dirección',
+        description: '7950 N.W. 77th STREET, UNIT# 1 Dock Door 31 to 34, MIAMI FL 33166',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+</Layout>

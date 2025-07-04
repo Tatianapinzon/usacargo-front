@@ -1,0 +1,21 @@
+# .gitignore
+
+# Node.js
+node_modules/
+dist/
+vendor/
+
+# Astro
+.netlify/
+vercel/
+.nginx/
+astro.config.ts
+
+# VS Code y otras configuraciones
+.vscode/
+.idea/
+.github/
+
+# Build
+*.log
+*.DS_Store

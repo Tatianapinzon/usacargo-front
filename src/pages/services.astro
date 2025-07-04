@@ -1,0 +1,157 @@
+---
+
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import servicios2 from '/src/assets/images/servicios2.jpg';
+import beneficios1 from '/src/assets/images/beneficios1.webp';
+
+const metadata = {
+  title: 'Servicios ',
+};
+---
+
+<Layout metadata={metadata}>
+  <section
+    class="relative h-auto py-24 md:py-36 text-white text-center px-6 bg-no-repeat bg-cover bg-center"
+    style="background-image: url('/images/envios.webp');"
+  >
+    <!-- Capa oscura -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-20 max-w-4xl mx-auto">
+      <p class="text-sm uppercase tracking-wide text-orange-400 mb-2">Servicios</p>
+
+      <h1 class="text-3xl md:text-5xl font-bold leading-snug mb-6">
+        Brindamos soluciones logísticas integrales<br />
+        <span class="text-[#E85002]">para importación y exportación</span>
+      </h1>
+
+      <p class="text-white/90 text-base md:text-lg leading-relaxed mb-8">
+        Coordinamos cargas aéreas, marítimas y terrestres desde Miami al mundo. Trazabilidad, eficiencia y cobertura global.
+      </p>
+
+      <a
+        href="/contact"
+        class="inline-block bg-[#E85002] hover:bg-[#A93700] text-white px-8 py-3 rounded-full font-semibold transition shadow-md"
+      >
+        Cotizá tu envío
+      </a>
+    </div>
+  </section>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+  title="Nuestros servicios principales"
+  subtitle="Soluciones logísticas especializadas para cubrir todas tus necesidades de importación y exportación."
+  columns={2}
+  items={[
+    {
+      title: 'Transporte Aéreo',
+      description: 'Envíos urgentes por vía aérea con cobertura internacional. Manejo de mercancías peligrosas y perecederas. Carga consolidada y charter',
+      icon: 'tabler:plane',
+    },
+    {
+      title: 'Transporte Marítimo',
+      description: 'Cargas FCL y LCL. Servicios puerta a puerta y despacho aduanero.',
+      icon: 'tabler:ship',
+    },
+    {
+      title: 'Almacenamiento y Distribución',
+      description: 'Warehouse en Miami con ubicación estratégica. Manejo de inventario y distribución eficiente. Servicios de etiquetado, reempaque y fulfillment. ',
+      icon: 'tabler:building-warehouse',
+    },
+    {
+      title: 'Despacho Aduanero y Documental',
+      description: 'Servicios integrales de clasificación, permisos y coordinación aduanera.',
+      icon: 'tabler:file-certificate',
+    },
+  ]}
+/>
+
+  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Cobertura global',
+        description:
+          'Operamos desde Miami hacia más de 40 países con servicios puerta a puerta y conexiones con los principales puertos y aeropuertos.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Gestión aduanera integral',
+        description:
+          'Tramitamos permisos, licencias y documentos para importación y exportación de forma centralizada y segura.',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'Trazabilidad y control',
+        description:
+          'Monitoreo en tiempo real de tus cargas y visibilidad completa durante todo el proceso logístico.',
+        icon: 'tabler:search',
+      },
+    ]}
+    image={{
+      src: servicios2,
+      alt: 'Personal de USA Cargo supervisando mercancía',
+      width: 800,
+      height: 600,
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        ¿Por qué elegir USA Cargo?
+      </h3>
+    </Fragment>
+  </Content>
+
+
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Tiempos optimizados',
+        description:
+          'Coordinamos operaciones rápidas por aire, mar o tierra, minimizando tiempos de tránsito y despacho para que tu carga llegue a destino sin demoras.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Atención personalizada',
+        description:
+          'Un asesor logístico acompaña cada operación desde el inicio, adaptando el servicio a tus necesidades y tipo de carga.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Red global de agentes',
+        description:
+          'Contamos con presencia en más de 40 países a través de aliados estratégicos que agilizan el proceso puerta a puerta.',
+        icon: 'tabler:world-search',
+      },
+      {
+        title: 'Ahorro logístico',
+        description:
+          'Ofrecemos un servicio integral que reduce costos operativos: transporte, almacenaje, aduana y distribución desde un solo lugar.',
+        icon: 'tabler:discount-check',
+      },
+    ]}
+    image={{
+      src: beneficios1,
+      alt: 'Personal de USA Cargo supervisando mercancía',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Beneficios
+      </h3>
+    </Fragment>
+  </Content>
+
+
+
+</Layout>
